@@ -8,18 +8,30 @@ body{
     background:linear-gradient(#2f4a93,#101B38) ;
 
 }
-body>ul:first-child{
-    padding-right:50%;
-
+nav{
+    display: flex;
+    justify-content: space-between;
+   margin-left: 2%;
+   margin-right: 2%;
+   font-weight: bold;
+   font-size: 20px;
 }
-body>ul{
+.left{
+     list-style: none;
+    }
+.right{
     list-style: none;
     display: flex;
-    padding:AUTO ;
-    justify-content: space-around;
-   
+    gap: 40px;
+
 }
+
 li>a{
     color: white;
     text-decoration: none;
+}
+
+
+li > a:hover {
+    color: #010418;
 }
