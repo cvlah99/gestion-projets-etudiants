@@ -5,7 +5,7 @@
 }
 body{
     color: #f4f4f4;
-    background:linear-gradient(#2f4a93,#101B38) ;
+    background:linear-gradient(#1e2d47,#0a1628) ;
 
 }
      /*header*/
@@ -15,11 +15,12 @@ nav{
    margin-left: 2%;
    margin-right: 2%;
    font-weight: bold;
-   font-size: 20px;
+   font-size: 24px;
    padding: 20px 0;
 }
 .left{
      list-style: none;
+     color:#c0c0c0;
     }
 .right{
     list-style: none;
@@ -35,7 +36,7 @@ li>a{
 
 
 li > a:hover {
-    color: #010418;
+    color: #7f8046;
 }
     /*home section*/
 #home{
@@ -47,11 +48,32 @@ li > a:hover {
     line-height: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 50px;
+    padding:  100px 50px;
+}
+#home h1{
+   
 }
 i{
-    color: #101B38;
+    color: #c0c0c0;
     margin-top:10px ;
+      font-size: 24px;
+}
+i:hover {
+    color: #7f8046;
+    transform: translateY(-3px);
+}
+h2 {
+    position: relative;
+    display: inline-block; 
+}
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;  
+    left: 0;
+    width: 50%;    
+    height: 3px;    
+    background: linear-gradient(90deg, #0a1628, transparent);
 }
    /*about section*/
 #about{
@@ -64,6 +86,7 @@ i{
 #about h2{
     text-align: center;
     padding-bottom: 12px;
+
 }
    /*resume section*/
 #resume{
