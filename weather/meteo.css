@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Poppins';
+}
+.container{
+    background: linear-gradient(to bottom right ,#7da6ed,#337ff1 ) ;
+    width: 98%;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url(.\Poppins-Regular.ttf);
+}
+.fa-sun , .fa-moon{
+    color: #f9d71c;
+}
+ #loading {
+        display: none;
+    }
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 100px;
+   
+}
+header>div{
+    display: flex;
+    flex-direction: column;
+}
+header>div>span:first-child{
+     font-size: 30px;
+}
+header i{
+    font-size: 50px;
+    animation: spin 4s linear infinite;
+}
+.weather{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    margin-bottom: 15px;
+}
+section{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    background-color: rgba(255, 255, 255, 0.283);
+    border-radius: 10px;
+    width: 96%;
+    margin: auto;
+    padding: 20px 10px;
+    overflow: auto;
+    scrollbar-width: none; 
+    margin-bottom: 15px;
+
+}
+section>div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+   
+}
+section>div>div{
+    display: flex;
+    gap: 5px;
+}
+aside{
+     margin-top:15px;
+     width: 96%;
+     margin: auto;
+     padding: 15px 10px; 
+     background-color: rgba(255, 255, 255, 0.265);
+     border-radius: 10px;
+
+
+    }
+aside>div{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+aside>div> span:first-child {
+    min-width: 80px; 
+   
+}
+aside>div>div{
+    display: flex;
+    gap: 5px;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 150px;
+    background-color: rgba(255, 255, 255, 0.265);
+    border-radius: 10px;
+    width:96%;
+    margin:auto;
+    margin-top: 15px;
+}
+footer>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:5px;
+    
+}
+footer>div>div{
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+}
+footer .fa-arrow-down,footer .fa-arrow-up {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+@media (max-width:453px) {
+    header{
+    padding: 30px 50px;
+}
+.weather{
+    padding-left: 50px;
+}
+footer{
+    padding: 20px 50px;
+}
+}
