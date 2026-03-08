@@ -5,7 +5,7 @@
 }
 body{
     color: #f4f4f4;
-    background:linear-gradient(#1e2d47,#0a1628) ;
+    background:linear-gradient(#78a6f5,#052450) ;
 
 }
      /*header*/
@@ -50,9 +50,6 @@ li > a:hover {
     margin-bottom: 20px;
     padding:  100px 50px;
 }
-#home h1{
-   
-}
 i{
     color: #c0c0c0;
     margin-top:10px ;
@@ -66,15 +63,7 @@ h2 {
     position: relative;
     display: inline-block; 
 }
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;  
-    left: 0;
-    width: 50%;    
-    height: 3px;    
-    background: linear-gradient(90deg, #0a1628, transparent);
-}
+
    /*about section*/
 #about{
    border:2px solid red;
