@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
+*{
+    font-family: 'poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1f1f1f;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.page_etudiants_enseignant{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: #EEE9E9;
+}
+
+
+.sidebar_enseignant{
+    width: 240px;
+    min-height: 100vh;
+    background-color: #EEE9E9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px 14px;
+    border-right: 1px solid #d9d9d9;
+}
+
+.sidebar_top{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.logo_block{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #111111;
+}
+
+.logo_block i{
+    font-size: 32px;
+}
+
+.logo_title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav_menu_enseignant{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav_link{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    color: #111111;
+    transition: 0.25s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav_link:hover{
+    background-color: #dfeaf3;
+    transform: translateX(4px);
+}
+
+.active_link{
+    background-color: #5A9CC8;
+    color: white;
+}
+
+.active_link:hover{
+    background-color: #5A9CC8;
+    transform: translateX(4px);
+}
+
+.sidebar_bottom{
+    margin-top: 30px;
+}
+
+.logout_btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background-color: #F5DCDC;
+    color: #ff4b4b;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.logout_btn:hover{
+    background-color: #f0cfcf;
+}
+
+/* ===================== MAIN ===================== */
+
+.main_content_etudiants{
+    flex: 1;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.intro_section_etudiants{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.intro_text_etudiants{
+    color: #E7A129;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.page_title_etudiants{
+    font-size: 24px;
+    font-weight: 800;
+    color: #111111;
+}
+
+.table_section_etudiants{
+    width: 100%;
+}
+
+.table_card_etudiants{
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e2e2e2;
+    overflow: hidden;
+}
+
+.table_actions_bar{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ececec;
+}
+
+.action_top_btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    border: 1px solid #d8d8d8;
+    color: #5b6370;
+    padding: 9px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+.action_top_btn:hover{
+    background-color: #f7f7f7;
+}
+
+.table_wrapper_etudiants{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.etudiants_table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.etudiants_table thead tr{
+    background-color: #F7F7F7;
+}
+
+.etudiants_table th{
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #5b6370;
+    font-weight: 600;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.etudiants_table td{
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #444444;
+    border-bottom: 1px solid #ededed;
+    vertical-align: middle;
+}
+
+.etudiants_table tbody tr:hover{
+    background-color: #fcfcfc;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 992px){
+    .sidebar_enseignant{
+        width: 210px;
+    }
+
+    .main_content_etudiants{
+        padding: 20px;
+    }
+
+    .page_title_etudiants{
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px){
+    .page_etudiants_enseignant{
+        flex-direction: column;
+    }
+
+    .sidebar_enseignant{
+        width: 100%;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid #d9d9d9;
+    }
+
+    .main_content_etudiants{
+        width: 100%;
+    }
+}
