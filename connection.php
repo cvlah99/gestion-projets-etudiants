@@ -1,5 +1,5 @@
 <?php
-require "conexion_db.php";
+require "Authentification/conexion_db.php";
 if(isset($_POST["email_etd"]) && isset($_POST["password_etd"])){
     $email_etd=trim($_POST["email_etd"]);
     $password_etd=trim($_POST["password_etd"]);
