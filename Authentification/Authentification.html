@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un compte étudiant</title>
+  <link rel="stylesheet" href="Authentification.css">
+</head>
+<body>
+
+  <div class="carte-formulaire">
+
+    <h1 class="titre">Créez votre compte étudiant pour accéder à la plateforme.</h1>
+
+    <form action="Authentification.php" method="POST" class="formulaire">
+
+      <div class="champ">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom"
+               required pattern="[A-Za-zÀ-ÿ\s]{3,}"
+               >
+      </div>
+
+      <div class="champ">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom"
+               required pattern="[A-Za-zÀ-ÿ\s]{3,}"
+               >
+      </div>
+
+      <div class="champ">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="champ">
+        <label for="provenance">Provenance</label>
+        <input type="text" id="provenance" name="provenance"
+               pattern="[A-Za-zÀ-ÿ\s]{2,}">
+      </div>
+
+      <div class="champ">
+        <label for="groupe_classe">Groupe de classe</label>
+        <input type="text" id="groupe_classe" name="groupe_classe"
+               required pattern="[A-Za-z0-9]{1,10}">
+      </div>
+
+      <div class="champ">
+        <label for="mot_de_passe">Mot de passe</label>
+        <input type="password" id="mot_de_passe" name="mot_de_passe"
+               required
+               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}">
+        <ul class="regles-mdp">
+          <li>Utiliser au moins 8 caractères</li>
+          <li>Contenir une lettre majuscule</li>
+          <li>Contenir une lettre minuscule</li>
+          <li>Contenir un caractère spécial</li>
+          <li>Contenir un chiffre</li>
+        </ul>
+      </div>
+
+      <button type="submit" class="bouton-soumettre">Créer un compte</button>
+
+    </form>
+
+    <p class="lien-connexion">
+      Vous avez déjà un compte ?
+      <a href="connexion.php">Se connecter</a>
+    </p>
+
+  </div>
+
+</body>
+</html>
