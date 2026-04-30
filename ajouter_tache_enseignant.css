@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'popping';
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
+*{
+    font-family: 'popping';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1f1f1f;
+}
+
+a{
+    text-decoration: none;
+}
+
+.page_tache{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #EEE9E9;
+}
+
+/* Sidebar */
+
+.sidebar_enseignant{
+    width: 240px;
+    height: 100vh;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #EEE9E9;
+}
+
+.sidebar_top{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.logo_block{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+}
+
+.logo_block i{
+    font-size: 34px;
+}
+
+.logo_block h2{
+    font-size: 22px;
+}
+
+.nav_menu{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.nav_link{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    border-radius: 9px;
+    color: #111;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.nav_link:hover{
+    background-color: #dce8f1;
+    transform: translateX(4px);
+}
+
+.active_link{
+    background-color: #5A9CC8;
+    color: white;
+}
+
+.logout_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #F8DCDC;
+    color: #ff3d3d;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Main */
+
+.main_tache{
+    flex: 1;
+    min-height: 100vh;
+    padding: 40px 55px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header_tache{
+    margin-bottom: 42px;
+}
+
+.welcome_text{
+    color: #E69A00;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 14px;
+}
+
+.header_tache h1{
+    font-size: 32px;
+    color: #111;
+    margin-bottom: 14px;
+}
+
+.subtitle{
+    color: #65708a;
+    font-size: 17px;
+}
+
+/* Form card */
+
+.form_card{
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 42px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    flex: 1;
+    height: 60%;
+}
+
+.form_ajouter_tache{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.form_group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form_group label{
+    font-size: 15px;
+    font-weight: 700;
+    color: #17233f;
+}
+
+.input_field,
+.textarea_field{
+    width: 100%;
+    border: 1px solid #cfd8e3;
+    border-radius: 7px;
+    padding: 0 16px;
+    font-size: 15px;
+    color: #17233f;
+    outline: none;
+    background-color: #fff;
+}
+
+.input_field{
+    height: 48px;
+}
+
+.textarea_field{
+    height: 160px;
+    padding-top: 16px;
+    resize: vertical;
+}
+
+.input_field::placeholder,
+.textarea_field::placeholder{
+    color: #74829c;
+}
+
+.input_field:focus,
+.textarea_field:focus{
+    border-color: #5A9CC8;
+    box-shadow: 0 0 0 3px rgba(90,156,200,0.15);
+}
+
+/* Buttons */
+
+.form_actions{
+    border-top: 1px solid #e8e8e8;
+    padding-top: 0px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn_cancel,
+.btn_submit{
+    min-width: 145px;
+    height: 30px;
+    border-radius: 7px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_cancel{
+    border: 1px solid #d5dce6;
+    color: #17233f;
+    background-color: white;
+}
+
+.btn_submit{
+    border: none;
+    background-color: #0E5AD7;
+    color: white;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.btn_submit:hover{
+    background-color: #084abd;
+}
+
+.btn_cancel:hover{
+    background-color: #f6f6f6;
+}

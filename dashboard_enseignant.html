@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Enseignant</title>
+    <link rel="stylesheet" href="dashboard_enseignant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="page_enseignant">
+
+        <!-- Sidebar -->
+        <aside class="sidebar_enseignant" id="sidebar_enseignant">
+
+            <div class="sidebar_top">
+                <div class="logo_block">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h2 class="logo_title">Enseignant</h2>
+                </div>
+
+                <nav class="nav_menu_enseignant">
+                    <a href="dashboard_enseignant.html" class="nav_link active_link" id="nav_dashboard_ens" name="nav_dashboard_ens">
+                        <i class="fa-solid fa-table-columns"></i>
+                        <span>Tableau de bord</span>
+                    </a>
+
+                    <a href="groupes_enseignant.html" class="nav_link" id="nav_groupes_ens" name="nav_groupes_ens">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Groupes</span>
+                    </a>
+
+                    <a href="etudiants_enseignant.html" class="nav_link" id="nav_etudiants_ens" name="nav_etudiants_ens">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <span>Etudiants</span>
+                    </a>
+
+                    <a href="ajouter_tache_enseignant.html" class="nav_link" id="nav_taches_ens" name="nav_taches_ens">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Taches</span>
+                    </a>
+
+                    <a href="soutenance_enseignant.html" class="nav_link" id="nav_soutenance_ens" name="nav_soutenance_ens">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Soutenance</span>
+                    </a>
+
+                    <a href="reglages_enseignant.html" class="nav_link" id="nav_reglages_ens" name="nav_reglages_ens">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Réglages</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar_bottom">
+                <a href="logout.php" class="logout_btn" id="logout_ens" name="logout_ens">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- Main content -->
+        <main class="main_content_enseignant" id="main_content_enseignant">
+
+            <!-- Intro section -->
+            <section class="intro_section_enseignant">
+                <p class="intro_text_enseignant">
+                    BIENVENUE DANS L’ESPACE ENSEIGNANT. VOICI LA LISTE DES GROUPES ET LEURS PROJETS SOUMIS.
+                </p>
+                <h1 class="page_title_enseignant">Tableau de bord Enseignant</h1>
+            </section>
+
+            <!-- Table section -->
+            <section class="table_section_enseignant">
+
+                <div class="table_card_enseignant">
+
+                    <div class="table_actions_bar">
+                        <button type="button" class="action_top_btn filter_btn" id="filter_btn_ens" name="filter_btn_ens">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Filters</span>
+                        </button>
+
+                        <button type="button" class="action_top_btn export_btn" id="export_btn_ens" name="export_btn_ens">
+                            <i class="fa-solid fa-file-export"></i>
+                            <span>Export</span>
+                        </button>
+                    </div>
+
+                    <div class="table_wrapper">
+                        <table class="groupes_table" id="groupes_table" name="groupes_table">
+                            <thead> <!-- définir l’en-tête du tableau en  organisant le code  -->
+                                <tr>
+                                    <th>Numero Groupe</th>
+                                    <th>Sujet</th>
+                                    <th>Valider</th>
+                                    <th>Refuser</th>
+                                    <th>Détail</th>
+                                </tr>
+                            </thead>
+
+                            <tbody> <!-- permet de structurer le tableau en séparant les données du reste  organisation  de  code  -->
+                                <!-- 
+                                    si en  vous  includer  php ici
+                                -->
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>Gestion de stock</td>
+                                    <td>
+                                        <form action="valider_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="1">
+                                            <button type="submit" class="btn_action btn_valider" name="btn_valider">
+                                                Accepter
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="refuser_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="1">
+                                            <button type="submit" class="btn_action btn_refuser" name="btn_refuser">
+                                                Refuser
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="details_groupe.php?id_groupe=1" class="detail_link" name="detail_groupe_1">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>Gestion de project</td>
+                                    <td>
+                                        <form action="valider_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="2">
+                                            <button type="submit" class="btn_action btn_valider" name="btn_valider">
+                                                Accepter
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="refuser_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="2">
+                                            <button type="submit" class="btn_action btn_refuser" name="btn_refuser">
+                                                Refuser
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="details_groupe.php?id_groupe=2" class="detail_link" name="detail_groupe_2">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>Gestion de bibliotheque</td>
+                                    <td>
+                                        <form action="valider_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="3">
+                                            <button type="submit" class="btn_action btn_valider" name="btn_valider">
+                                                Accepter
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="refuser_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="3">
+                                            <button type="submit" class="btn_action btn_refuser" name="btn_refuser">
+                                                Refuser
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="details_groupe.php?id_groupe=3" class="detail_link" name="detail_groupe_3">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>Gestion de cabin</td>
+                                    <td>
+                                        <form action="valider_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="4">
+                                            <button type="submit" class="btn_action btn_valider" name="btn_valider">
+                                                Accepter
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="refuser_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="4">
+                                            <button type="submit" class="btn_action btn_refuser" name="btn_refuser">
+                                                Refuser
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="details_groupe.php?id_groupe=4" class="detail_link" name="detail_groupe_4">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>Gestion d’hopitel</td>
+                                    <td>
+                                        <form action="valider_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="5">
+                                            <button type="submit" class="btn_action btn_valider" name="btn_valider">
+                                                Accepter
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="refuser_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="5">
+                                            <button type="submit" class="btn_action btn_refuser" name="btn_refuser">
+                                                Refuser
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="details_groupe.php?id_groupe=5" class="detail_link" name="detail_groupe_5">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>6</td>
+                                    <td>Gestion de piscine</td>
+                                    <td>
+                                        <form action="valider_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="6">
+                                            <button type="submit" class="btn_action btn_valider" name="btn_valider">
+                                                Accepter
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="refuser_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="6">
+                                            <button type="submit" class="btn_action btn_refuser" name="btn_refuser">
+                                                Refuser
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="details_groupe.php?id_groupe=6" class="detail_link" name="detail_groupe_6">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>7</td>
+                                    <td>Gestion d’école</td>
+                                    <td>
+                                        <form action="valider_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="7">
+                                            <button type="submit" class="btn_action btn_valider" name="btn_valider">
+                                                Accepter
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="refuser_projet.php" method="POST">
+                                            <input type="hidden" name="id_groupe" value="7">
+                                            <button type="submit" class="btn_action btn_refuser" name="btn_refuser">
+                                                Refuser
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="details_groupe.php?id_groupe=7" class="detail_link" name="detail_groupe_7">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
