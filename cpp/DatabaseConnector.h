@@ -5,7 +5,7 @@ using namespace std;
 class DatabaseConnector {
     public: 
         bool testConnection();
-        bool insertCode(const string & );
+        int insertCode(const string & );
 };
 
 #endif

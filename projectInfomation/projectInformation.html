@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un groupe</title>
+    <link rel="stylesheet" href="projectInformation.css">
+</head>
+<body>
+
+    <main class="project-info-page">
+        <section class="project-info-card">
+            
+            <h1 class="project-info-title">Remlire les informations de votre project</h1>
+
+            <form class="project-info-form" action="projectInformation.php" method="post">
+
+                <div class="project-form-field">
+                    <input
+                        type="text"
+                        id="sujet"
+                        name="sujet"
+                        class="project-form-input"
+                        placeholder="Sujet"
+                    >
+                </div>
+
+                <div class="project-form-field">
+                    <textarea
+                        id="description_sujet"
+                        name="description_sujet"
+                        class="project-form-textarea"
+                        placeholder="Description de sujet"
+                    ></textarea>
+                </div>
+
+                <div class="project-form-button-wrapper">
+                    <button
+                        type="submit"
+                        id="creer_groupe"
+                        name="creer_groupe"
+                        class="project-form-button"
+                    >
+                        Cree le groupe
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+    </main>
+
+</body>
+</html>

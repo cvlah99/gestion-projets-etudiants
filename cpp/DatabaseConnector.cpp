@@ -46,37 +46,42 @@ bool DatabaseConnector::testConnection() {
     return true;
 }
 
-bool DatabaseConnector::insertCode(const string & code){
-    MYSQL* conn = mysql_init(nullptr);
+int DatabaseConnector::insertCode(const string & code){
+    MYSQL* conn;
 
-    if(conn == nullptr){
-        cout<<"Connection echoue";
-        return false;
-    }
+    conn = mysql_init(nullptr);
 
-    MYSQL* result = mysql_real_connect(
+    if (conn == nullptr){
+        return -1;
+    } 
+
+    conn = mysql_real_connect(
         conn, 
-        "localhost",
-        "root",
-        "yassine123!@",
-        "gestion_de_project",
-        3306,
-        nullptr,
+        "localhost", 
+        "root", 
+        "yassine123!@", 
+        "gestion_de_project", 
+        3306, 
+        nullptr, 
         0
     );
-    if(conn == nullptr){
-        cout<<"Connection echoue" << mysql_error(conn)<<endl;
-        return false;
-    }
-    string querry = "INSERT INTO groupe (code_groupe, Date_creationGrp) VALUES (' "+ code +" ', CURDATE())";
-    if(mysql_query(conn, querry.c_str())){  
-        cout<<"Query failed: "<<mysql_error(conn) <<endl;
+
+    if (conn == nullptr){
+        return -1;
+    } 
+
+    string query = "INSERT INTO groupe (code_groupe, Date_creationGrp) VALUES ('" + code + "', CURDATE())";
+
+    if (mysql_query(conn, query.c_str())) {   // mysql_querry(means if mysql return and error)  needs two parameter the active db connection conn and the sql command to execute it does not accept the c++ string  style it  accept C-style string that's why we use c_str function 
         mysql_close(conn);
-        return false;
+        return -1;
     }
-    cout<<"Code has has created and  inserted  correctly ";
+
+    // Get the Id_Groupe that was just created
+    int id_groupe = (int)mysql_insert_id(conn); // reads the  number  id  of the groupe who  was just  created  and the  function  int  concert it  to  an  integer 
 
     mysql_close(conn);
 
-    return true;
+    // Return the Id_Groupe so main.cpp can print it for PHP
+    return id_groupe;
 }

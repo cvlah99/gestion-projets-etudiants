@@ -1,6 +1,6 @@
 <?php
 session_start(); //pour memoriser l utulisateur connecte
-require "Authentification/conexion_db.php";
+require "../Authentification/conexion_db.php";
 
 if (isset($_POST["email_etd"], $_POST["password_etd"])) {
 
@@ -34,7 +34,7 @@ if (isset($_POST["email_etd"], $_POST["password_etd"])) {
                 $_SESSION['nom'] = $user['nom_Etudiant'];
                 $_SESSION['prenom'] = $user['prenom_Etudiant'];
                 $_SESSION['email'] = $user['email'];
-                header("location: dashboard.php");
+                header("location: ../cree_rejoindre_grp/cree_rejoindre.html");
                 exit;
                 
 

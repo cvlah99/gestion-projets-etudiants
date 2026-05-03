@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(fonts/Montserrat-VariableFont_wght);
+}
+*{
+    font-family: 'poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #b8d4e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+  .container {
+  background: #ffffff;
+  border-radius: 28px;
+  width: 390px;
+  height: 260px;
+  box-shadow: 6px 10px 0px 0px rgba(140, 170, 200, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+ 
+  .container button{
+  width: 215px;
+  height: 46px;
+  background-color: #3d7ab5;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.1px;
+}
+.container button~button{
+  background-color: #5297C2;
+}
+ 
+  .container button:hover {
+  background-color: #2f6a9e;
+}
+
+.container a {
+    width: 215px;
+    height: 46px;
+    background-color: #3d7ab5;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 0.1px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container a:nth-child(2) {
+    background-color: #5297C2;
+}
+
+.container a:hover {
+    background-color: #2f6a9e;
+}

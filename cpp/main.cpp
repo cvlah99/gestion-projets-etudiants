@@ -11,22 +11,14 @@ int main() {
     srand(time(0)); // start the random generator using the current time
 
     CodeGenerator G1;
-    string code = G1.generateCode();
+    string code = G1.generateCode(); // here we generate the  code  and  store in  in  string called  code
 
-    cout << "Generated code: " << code << endl;
-
+    
     DatabaseConnector db;
+    int id_groupe = db.insertCode(code);  // this fucntion  declared in database connector  called  insertcode accept one string with  is the code  
 
-    if (db.testConnection()) {
-        cout << "Connection reussie" << endl;
-    } else {
-        cout << "Connection failed" << endl;
-    }
-    if(db.insertCode(code)){
-        cout<<"Code c'est  stocker dans le db";
-    }else{
-        cout<<"failed";
-    }
+    
+    cout << id_groupe;
 
     return 0;
 }

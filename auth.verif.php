@@ -6,4 +6,4 @@ if (!isset($_SESSION['id_etudiant'])) {
     exit;
 }
 
-?>.
+?>

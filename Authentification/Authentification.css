@@ -1,0 +1,204 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: #b3cfe0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+
+.carte-formulaire {
+  background-color: #ffffff;
+  border: 2px solid #5a9fc5;
+  border-radius: 6px;
+  padding: 24px 28px 20px 28px;
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+
+.titre {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.champ label {
+  font-size: 12px;
+  color: #333333;
+  font-weight: 400;
+}
+
+.champ input {
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid #b0c8d8;
+  border-radius: 3px;
+  background-color: #ffffff;
+  font-size: 13px;
+  color: #222;
+  outline: none;
+  width: 100%;
+}
+
+.champ input:focus {
+  border-color: #5a9fc5;
+}
+
+/* ===========================
+   CHAMP MOT DE PASSE
+   — input + bouton "Hide" sur la même ligne
+=========================== */
+.champ-mot-de-passe {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #b0c8d8;
+  border-radius: 3px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.champ-mot-de-passe input {
+  flex: 1;
+  height: 28px;
+  padding: 0 8px;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #222;
+  background-color: transparent;
+  width: auto;
+}
+
+.champ-mot-de-passe:focus-within {
+  border-color: #5a9fc5;
+}
+
+#bouton-afficher {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0 10px;
+  font-size: 11px;
+  color: #444;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#bouton-afficher::before {
+  content: '🔒';
+  font-size: 12px;
+}
+
+#bouton-afficher:hover {
+  color: #1a6fa0;
+}
+
+/* ===========================
+   RÈGLES MOT DE PASSE
+   — en ligne, flex-wrap 2 colonnes
+=========================== */
+.regles-mdp {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  list-style: none;
+  margin-top: 6px;
+}
+
+.regles-mdp li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: #666;
+}
+
+.regles-mdp li::before {
+  content: '●';
+  font-size: 8px;
+  color: #aaa;
+}
+
+.regles-mdp li.valide {
+  color: #2e7d32;
+}
+
+.regles-mdp li.valide::before {
+  color: #2e7d32;
+}
+
+/* ===========================
+   BOUTON CRÉER UN COMPTE
+   — bleu solide, arrondi capsule
+=========================== */
+.bouton-soumettre {
+  align-self: flex-start;
+  margin-top: 14px;
+  padding: 8px 22px;
+  background-color: #3a8dc4;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.bouton-soumettre:hover {
+  background-color: #2a6ea0;
+}
+
+/* ===========================
+   LIEN "vous avez un compte ?"
+=========================== */
+.lien-connexion {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #444;
+}
+
+.lien-connexion a {
+  color: #1a6fa0;
+  text-decoration: none;
+}
+
+.lien-connexion a:hover {
+  text-decoration: underline;
+}
