@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['id_etudiant'])) {
-    header("Location: connection_etudiant.html");
+    header("Location: /PFS/connection_etudiant/connection_etudiant.html");
     exit;
 }
 

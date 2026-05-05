@@ -42,6 +42,10 @@ if (!$groupe) {
 
 $id_groupe = $groupe['Id_Groupe'];
 
+// Mettre à jour la session avec le groupe rejoint
+$_SESSION['id_groupe'] = $id_groupe;
+
+
 // link the student to this group
 $sql3 = "UPDATE etudiant SET Id_Groupe = :id_groupe WHERE Id_Etudiant = :id_etudiant";
 $stmt3 = $conn->prepare($sql3);
@@ -53,6 +57,8 @@ $stmt4 = $conn->prepare($sql4);
 $stmt4->execute([":id_groupe" => $id_groupe]);
 
 // send the student to the dashboard
-header("Location: dashboard.php");
+
+header("Location: /PFS/pfs/page10.php");
 exit;
+
 ?>

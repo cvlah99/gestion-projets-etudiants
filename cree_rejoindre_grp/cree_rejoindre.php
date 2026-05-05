@@ -1,3 +1,13 @@
+<?php
+require "../auth.verif.php";
+
+if (!empty($_SESSION['id_groupe'])) {
+    header("Location: /PFS/pfs/page10.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
