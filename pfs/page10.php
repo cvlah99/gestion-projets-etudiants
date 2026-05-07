@@ -65,9 +65,13 @@ $code_groupe = $groupe ? $groupe['code_groupe'] : '';
     </div>
   </div>
 
-  <nav class="nav">
-    <a class="nav-item">Dashboard</a>
-  </nav>
+  
+<nav class="nav">
+  <a class="nav-item active" href="/PFS/pfs/page10.php">Dashboard</a>
+  <a class="nav-item" href="/PFS/pfs/tache.php">Tache a soumettre</a>
+  <a class="nav-item" href="/PFS/pfs/soutenance.php">Soutenance</a>
+</nav>
+
 
   <div class="logout">
     <form action="/PFS/logout.php" method="post">
@@ -76,51 +80,77 @@ $code_groupe = $groupe ? $groupe['code_groupe'] : '';
   </div>
 </aside>
 
-<!-- MAIN -->
 <main class="main">
-<div class="content-row">
 
-  <!-- COLONNE GAUCHE : MEMBRES -->
-  <div class="members-card">
-
-    <p style="margin-bottom:15px; font-weight:bold;">
-      Code du groupe :
-      <span style="color:#5b9bd5;">
-        <?php echo htmlspecialchars($code_groupe); ?>
-      </span>
-    </p>
-
-    <h2>Membres du groupe</h2>
-
-    <div class="member-list">
-      <?php foreach ($membres as $membre): ?>
-        <div class="member-item">
-          <div class="member-avatar">👤</div>
-          <span class="member-name">
-            <?php echo htmlspecialchars($membre['nom_Etudiant']." ".$membre['prenom_Etudiant']); ?>
-          </span>
-        </div>
-      <?php endforeach; ?>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="code-label">
+        CODE DU GROUPE : <?php echo htmlspecialchars($code_groupe); ?>
+      </div>
+      <h1>Groupe Dashboard</h1>
     </div>
 
+    <button class="btn-project">
+      + Remplir le formulaire de project
+    </button>
   </div>
 
-  <!-- COLONNE DROITE : CALENDRIER -->
-  <div class="right-col">
+  <!-- CONTENT -->
+  <div class="content-row">
 
-    <div class="calendar-card">
-      <div class="cal-header">
-        <span class="month" id="calendar-month"></span>
+    <!-- LEFT -->
+    <div class="members-card">
+
+      <h2>Membres :</h2>
+
+      <div class="member-list">
+        <?php foreach ($membres as $membre): ?>
+          <div class="member-item">
+            <div class="member-avatar">👤</div>
+            <span class="member-name">
+              <?php echo htmlspecialchars($membre['nom_Etudiant']." ".$membre['prenom_Etudiant']); ?>
+            </span>
+          </div>
+        <?php endforeach; ?>
       </div>
 
-      <div class="cal-grid" id="calendar-grid"></div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-col">
+
+      <!-- CALENDAR -->
+      <div class="calendar-card">
+        <div class="cal-header">
+          <span class="month" id="calendar-month"></span>
+        </div>
+
+        <div class="cal-grid" id="calendar-grid"></div>
+      </div>
+
+      <!-- NOTIFICATIONS -->
+      <div class="notif-card">
+        <h3>Notifications récentes</h3>
+
+        <div class="notif-item">
+          <div class="notif-text">
+            Cher groupe veuillez remplir le formulaire
+          </div>
+          <div class="notif-time">2 HOURS AGO</div>
+        </div>
+
+        <a href="#" class="view-all">
+          VIEW ALL NOTIFICATIONS
+        </a>
+      </div>
+
     </div>
 
   </div>
 
-</div>
-
 </main>
+
 
 
 
