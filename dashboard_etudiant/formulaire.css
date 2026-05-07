@@ -1,0 +1,326 @@
+:root {
+  --bg: #eef2f7;
+  --sidebar-bg: #ffffff;
+  --accent: #3d6fd4;
+  --accent-light: #e8effe;
+  --accent-hover: #2d5cbf;
+  --text-dark: #1a1f36;
+  --text-mid: #4a5568;
+  --text-muted: #8a95a8;
+  --danger: #e53e3e;
+  --danger-light: #fff0f0;
+  --shadow: 0 2px 12px rgba(61,111,212,0.08);
+  --radius: 14px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 210px;
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 12px;
+  border-right: 1px solid #e8ecf2;
+  flex-shrink: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px 24px 6px;
+  border-bottom: 1px solid #eef0f4;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--accent-light);
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info .name {
+  font-family: 'Sora', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.profile-info .group {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--text-mid);
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+}
+
+.nav-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.nav-item:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.nav-item.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.logout { padding-top: 12px; border-top: 1px solid #eef0f4; }
+
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: var(--danger-light);
+  border: none;
+  border-radius: 10px;
+  color: var(--danger);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.18s;
+}
+
+.logout-btn:hover { background: #ffe0e0; }
+
+/* ── MAIN ── */
+.main {
+  flex: 1;
+  padding: 28px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ── HEADER ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left .code-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.header-left h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* ── FORM CARD ── */
+.form-card {
+  background: #ffffff;
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 680px;
+}
+
+/* ── FIELDS ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.field input[type="text"],
+.field textarea {
+  padding: 12px 14px;
+  border: 1.5px solid #dde3ef;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: #fafbfd;
+  outline: none;
+  resize: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.field input[type="text"]:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(61,111,212,0.1);
+  background: #fff;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── UPLOAD ZONE ── */
+.upload-zone {
+  border: 2px dashed #c5d0e8;
+  border-radius: 12px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: #f7f9fd;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s;
+}
+
+.upload-zone.drag-over {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.upload-zone.has-file {
+  border-color: #3db87a;
+  background: #f0fbf5;
+}
+
+.upload-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--accent);
+  opacity: 0.7;
+}
+
+.upload-text {
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+.upload-btn {
+  padding: 7px 18px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Sora', sans-serif;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.upload-btn:hover { background: #d4e3fc; }
+
+.upload-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.file-name {
+  font-size: 12.5px;
+  color: #3db87a;
+  font-weight: 600;
+  min-height: 16px;
+}
+
+/* ── FORM ACTIONS ── */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.btn-cancel {
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: 'Sora', sans-serif;
+  text-decoration: none;
+  color: var(--text-mid);
+  background: #eef2f7;
+  border: 1.5px solid #dde3ef;
+  transition: background 0.18s;
+}
+
+.btn-cancel:hover { background: #e2e8f0; }
+
+.btn-submit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: 'Sora', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(61,111,212,0.28);
+  transition: background 0.18s, box-shadow 0.18s, transform 0.12s;
+}
+
+.btn-submit:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 6px 18px rgba(61,111,212,0.35);
+  transform: translateY(-1px);
+}
+
+.btn-submit:active { transform: translateY(0); }

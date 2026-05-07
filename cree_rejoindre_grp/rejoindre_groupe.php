@@ -58,7 +58,7 @@ $stmt4->execute([":id_groupe" => $id_groupe]);
 
 // send the student to the dashboard
 
-header("Location: /PFS/pfs/page10.php");
+header("Location: /PFS/dashboard_etudiant/dashboard.php");
 exit;
 
 ?>

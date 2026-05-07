@@ -62,6 +62,6 @@ $_SESSION['id_groupe']   = $id_groupe;
 
 // 10. Redirect
 
-header("Location: /PFS/pfs/page10.php");
+header("Location: /PFS/dashboard_etudiant/dashboard.php");
 exit;
 ?>

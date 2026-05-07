@@ -48,7 +48,7 @@ if (isset($_POST["email_etd"], $_POST["password_etd"])) {
                 // Redirection intelligente après connexion
                 if (!empty($_SESSION['id_groupe'])) {
                 // ✅ L'utilisateur a déjà un groupe → dashboard directement
-                header("Location: /PFS/pfs/page10.php");
+                header("Location: /PFS/dashboard_etudiant/dashboard.php");
                 exit;
                 } else {
                     // ✅ L'utilisateur n'a pas de groupe → créer / rejoindre

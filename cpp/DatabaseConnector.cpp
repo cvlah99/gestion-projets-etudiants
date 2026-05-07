@@ -21,7 +21,7 @@ bool DatabaseConnector::testConnection() {
         conn,
         "localhost",              
         "root",                   
-        "Salah@sql12",                       
+        "yassine123!@",                       
         "gestion_de_project",     
         3306,                     
         nullptr, // tell  my  sql to use the normal TCP connection with localhost and port 3306 (TCP is a conncection  protocol)
@@ -59,7 +59,7 @@ int DatabaseConnector::insertCode(const string & code){
         conn, 
         "localhost", 
         "root", 
-        "Salah@sql12", 
+        "yassine123!@", 
         "gestion_de_project", 
         3306, 
         nullptr, 
