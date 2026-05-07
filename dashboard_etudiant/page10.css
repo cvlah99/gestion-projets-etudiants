@@ -1,14 +1,19 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* RESET */
+* {
+ box-sizing: border-box;  
+ margin: 0;
+ padding: 0;
+}
 
+/* BODY */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f5eded;
   display: flex;
   height: 100vh;
-  overflow: hidden;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 .sidebar {
   width: 200px;
   background-color: #f5eded;
@@ -21,7 +26,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0 16px 20px 16px;
+  padding: 0 16px 20px;
 }
 
 .avatar {
@@ -33,7 +38,6 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-weight: bold;
 }
 
 .profile-info .name {
@@ -41,30 +45,51 @@ body {
   font-weight: 600;
 }
 
+/* MENU */
 .nav {
   flex: 1;
   padding: 0 10px;
 }
 
+/* bouton normal */
 .nav-item {
-  display: block;
-  padding: 9px 12px;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
   font-size: 13px;
-  text-decoration: none;
   color: #444;
-  margin-bottom: 5px;
+  text-decoration: none;
+
+  margin-bottom: 8px;
+
+  background-color: transparent;
+  transition: 0.2s;
+}
+
+/* bouton actif */
+.nav-item.active {
   background-color: #5b9bd5;
   color: #fff;
 }
 
+/* hover */
+.nav-item:hover {
+  background-color: #e3e3e3;
+}
+
+/* LOGOUT */
 .logout {
   padding: 0 10px;
+  margin-top: auto;
 }
 
 .logout-btn {
   width: 100%;
-  padding: 9px 12px;
+  padding: 9px;
   background-color: #f8d7d7;
   border: none;
   border-radius: 8px;
@@ -72,19 +97,66 @@ body {
   cursor: pointer;
 }
 
-/* Main */
+/* MAIN */
 .main {
   flex: 1;
-  padding: 28px;
+  padding: 30px;
 }
 
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.code-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5b9bd5;
+  margin-bottom: 5px;
+}
+
+.header-left h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+/* BUTTON */
+.btn-project {
+  background-color: #5b9bd5;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* LAYOUT */
+.content-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* MEMBERS */
 .members-card {
+  flex: 1;
   background-color: #a8c8e8;
   border-radius: 14px;
   padding: 20px;
 }
 
 .members-card h2 {
+  font-size: 18px;
   margin-bottom: 15px;
 }
 
@@ -104,10 +176,10 @@ body {
 }
 
 .member-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   background-color: #7a5c4a;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,76 +188,98 @@ body {
 
 .member-name {
   font-size: 13px;
-  font-weight: 500;
 }
-/* ===== CALENDAR ===== */
 
+/* RIGHT COLUMN */
+.right-col {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* CALENDAR */
 .calendar-card {
   background-color: #e8e0f0;
   border-radius: 14px;
   padding: 16px;
-  margin-bottom: 20px;
-  width: 100%;
 }
 
 .cal-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 12px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.cal-header .month {
+.month {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a2e;
 }
 
 .cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  gap: 3px;
   text-align: center;
+  justify-items: center;
 }
 
 .cal-day-label {
   font-size: 10px;
-  font-weight: 600;
   color: #888;
-  padding: 4px 0;
 }
 
 .cal-day {
-  font-size: 12px;
-  color: #333;
-  padding: 6px 0;
-  border-radius: 50%;
-  cursor: default;
+  width: 26px;
+  height: 26px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cal-day.today {
   background-color: #5b9bd5;
-  color: #fff;
-  font-weight: bold;
+  color: white;
+  border-radius: 50%;
 }
 
-.cal-day.other-month {
+.other-month {
   visibility: hidden;
 }
-/* ===== LAYOUT DE CONTENU (2 COLONNES) ===== */
 
-.content-row {
+/* NOTIFICATIONS */
+.notif-card {
+  background-color: #e8e0f0;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.notif-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.notif-item {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 3px;
 }
 
-/* Colonne gauche : membres */
-.members-card {
-  flex: 1;
+.notif-text {
+  font-size: 12px;
 }
 
-/* Colonne droite : calendrier */
-.right-col {
-  width: 320px;
-  flex-shrink: 0;
+.notif-time {
+  font-size: 10px;
+  color: #999;
 }
+
+.view-all {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 11px;
+  color: #888;
+}
+  
