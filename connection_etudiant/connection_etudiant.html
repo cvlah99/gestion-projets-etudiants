@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="connection_etudiant.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Se connecter — PFS</title>
+  <link rel="stylesheet" href="connection_etudiant.css">
 </head>
 <body>
-    <main>
-        <div class="login_box">
-            <h1>Se connecter</h1>
-            <p>Entrer votre email et mot de pass pour se connecter a votre compte</p>
 
-            <form class="form_login" method="post" action="connection.php">
-                <input type="email" name="email_etd" placeholder="Email Address" class="email_etd" required>
-                <input type="password" name="password_etd" placeholder="Password" class="password_etd" required>
-                <input type="submit" value="conexion">
-            </form>
+  <div class="page">
+
+    <!-- ===== PANNEAU GAUCHE ===== -->
+    <div class="gauche">
+      <div class="logo">PFS</div>
+      <h1>Bon retour parmi nous</h1>
+      <p>Connectez-vous pour accéder à votre espace de gestion de projets étudiants.</p>
+      <ul>
+        <li>Tableau de bord de votre groupe</li>
+        <li>Suivi des tâches en temps réel</li>
+        <li>Soumission de rapports PDF</li>
+      </ul>
+    </div>
+
+    <!-- ===== PANNEAU DROIT (FORMULAIRE) ===== -->
+    <div class="droite">
+
+      <h2>Se connecter</h2>
+      <p class="sous-titre">Entrez vos identifiants pour accéder à votre compte</p>
+
+      <form method="post" action="connection.php">
+
+        <div class="champ">
+          <label for="email_etd">Adresse email</label>
+          <input type="email" id="email_etd" name="email_etd"
+                 placeholder="exemple@universite.ma" required>
         </div>
-    </main>
+
+        <div class="champ">
+          <label for="password_etd">Mot de passe</label>
+          <input type="password" id="password_etd" name="password_etd"
+                 placeholder="Votre mot de passe" required>
+        </div>
+
+        <button type="submit">Se connecter</button>
+
+      </form>
+
+      <p class="bas-page">
+        Vous n'avez pas encore de compte ?
+        <a href="../Authentification/Authentification.html">Créer un compte</a>
+      </p>
+
+    </div>
+
+  </div>
+
 </body>
 </html>
