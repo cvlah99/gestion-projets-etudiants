@@ -30,13 +30,13 @@ $stmt->execute();
 $total_formulaires = $stmt->fetch()['total'];
 
 // Nombre de formulaires acceptés
-$sql = "SELECT COUNT(*) AS total FROM formulaire WHERE statut = 'accepté'";
+$sql = "SELECT COUNT(*) AS total FROM formulaire WHERE statut = 'accepte'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $total_acceptes = $stmt->fetch()['total'];
 
 // Nombre de formulaires refusés
-$sql = "SELECT COUNT(*) AS total FROM formulaire WHERE statut = 'refusé'";
+$sql = "SELECT COUNT(*) AS total FROM formulaire WHERE statut = 'refuse'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $total_refuses = $stmt->fetch()['total'];
@@ -93,7 +93,7 @@ $etudiants = $stmt->fetchAll();
     <a class="nav-link active" href="dashboard_admin.php">Dashboard</a>
     <a class="nav-link" href="#section-groupes">Groupes</a>
     <a class="nav-link" href="#section-etudiants">Étudiants</a>
-    <a class="nav-link" href="creer_encadrant.php">Créer encadrant</a>
+    <a class="nav-link" href="creer_encadrant_form.php">Créer encadrant</a>
   </nav>
 
   <div class="sidebar-bottom">

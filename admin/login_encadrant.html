@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion Encadrant — PFS</title>
+  <link rel="stylesheet" href="login_encadrant.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- ===== PANNEAU GAUCHE ===== -->
+    <div class="gauche">
+      <div class="logo">PFS</div>
+      <h1>Espace Encadrant</h1>
+      <p>Connectez-vous pour accéder à votre espace de suivi des projets étudiants.</p>
+      <ul>
+        <li>Consultation des projets soumis</li>
+        <li>Validation et refus des rapports</li>
+        <li>Suivi des groupes</li>
+      </ul>
+    </div>
+
+    <!-- ===== PANNEAU DROIT ===== -->
+    <div class="droite">
+
+      <h2>Connexion Encadrant</h2>
+      <p class="sous-titre">Entrez votre clé d'accès fournie par l'administrateur</p>
+
+      <form method="post" action="login_encadrant.php">
+
+        <div class="champ">
+          <label for="cle_accee">Clé d'accès</label>
+          <input type="text" id="cle_accee" name="cle_accee"
+                 placeholder="Ex : AB3XY9KL" required
+                 maxlength="8" style="text-transform:uppercase; letter-spacing:4px;">
+        </div>
+
+        <button type="submit">Se connecter</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
