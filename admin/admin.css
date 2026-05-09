@@ -1,0 +1,410 @@
+/* =============================================
+   FONT — Raleway en local
+============================================= */
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway.regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =============================================
+   VARIABLES
+============================================= */
+:root {
+  --bleu:       #2563eb;
+  --bleu-fonce: #1d4ed8;
+  --bleu-clair: #3b82f6;
+  --texte:      #111827;
+  --gris:       #6b7280;
+  --bordure:    #e5e7eb;
+  --fond:       #f1f5f9;
+  --blanc:      #ffffff;
+  --vert:       #16a34a;
+  --rouge:      #dc2626;
+  --orange:     #d97706;
+  --sidebar:    220px;
+}
+
+/* =============================================
+   BASE
+============================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'raleway', sans-serif;
+}
+
+h1, h2, h3, button, label, a, span, div, p, th, td {
+  font-weight: normal;
+}
+
+body {
+  background-color: var(--fond);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =============================================
+   SIDEBAR
+============================================= */
+.sidebar {
+  width: var(--sidebar);
+  background: linear-gradient(180deg, #1e3a8a, #2563eb, #3b82f6);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px;
+}
+
+.logo {
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin-bottom: 28px;
+  padding-left: 4px;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 24px;
+}
+
+.profile-icon {
+  font-size: 20px;
+}
+
+.profile-name {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.profile-role {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 38, 38, 0.35);
+  color: #ffffff;
+}
+
+/* =============================================
+   MAIN
+============================================= */
+.main {
+  flex: 1;
+  padding: 30px 32px;
+  overflow-y: auto;
+}
+
+/* =============================================
+   BARRE DU HAUT
+============================================= */
+.top-bar {
+  margin-bottom: 28px;
+}
+
+.top-bar h1 {
+  font-size: 24px;
+  color: var(--texte);
+}
+
+/* =============================================
+   STATISTIQUES
+============================================= */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  flex: 1;
+  background: var(--blanc);
+  border: 1.5px solid var(--bordure);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-card.vert {
+  border-color: var(--vert);
+  background: #f0fdf4;
+}
+
+.stat-card.rouge {
+  border-color: var(--rouge);
+  background: #fef2f2;
+}
+
+.stat-nombre {
+  font-size: 32px;
+  color: var(--bleu);
+  margin-bottom: 6px;
+}
+
+.stat-card.vert .stat-nombre {
+  color: var(--vert);
+}
+
+.stat-card.rouge .stat-nombre {
+  color: var(--rouge);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--gris);
+}
+
+/* =============================================
+   SECTIONS
+============================================= */
+.section {
+  background: var(--blanc);
+  border: 1.5px solid var(--bordure);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.section h2 {
+  font-size: 16px;
+  color: var(--texte);
+  margin-bottom: 16px;
+}
+
+/* =============================================
+   TABLEAU
+============================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 11px;
+  color: var(--gris);
+  padding: 8px 12px;
+  border-bottom: 1.5px solid var(--bordure);
+  background: var(--fond);
+}
+
+td {
+  font-size: 13px;
+  color: var(--texte);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+tr:hover td {
+  background: var(--fond);
+}
+
+/* =============================================
+   BADGES
+============================================= */
+.code-badge {
+  background: var(--bleu);
+  color: #ffffff !important;
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 20px;
+  letter-spacing: 2px;
+}
+
+.badge-statut {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.badge-statut.accepté {
+  background: #f0fdf4;
+  color: var(--vert) !important;
+  border: 1px solid var(--vert);
+}
+
+.badge-statut.refusé {
+  background: #fef2f2;
+  color: var(--rouge) !important;
+  border: 1px solid var(--rouge);
+}
+
+.badge-statut.attente {
+  background: #fffbeb;
+  color: var(--orange) !important;
+  border: 1px solid var(--orange);
+}
+
+.pas-soumis {
+  font-size: 12px;
+  color: var(--gris);
+}
+
+/* =============================================
+   FORMULAIRE CRÉER ENCADRANT
+============================================= */
+.form-card {
+  background: var(--blanc);
+  border: 1.5px solid var(--bordure);
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 480px;
+}
+
+.form-card h2 {
+  font-size: 16px;
+  color: var(--texte);
+  margin-bottom: 4px;
+}
+
+.sous-titre {
+  font-size: 12px;
+  color: var(--gris);
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 12px;
+  color: var(--texte);
+}
+
+input {
+  height: 42px;
+  padding: 0 14px;
+  border: 1.5px solid var(--bordure);
+  border-radius: 8px;
+  background: #f9fafb;
+  font-size: 13px;
+  color: var(--texte);
+  outline: none;
+  width: 100%;
+}
+
+input:focus {
+  border-color: var(--bleu);
+  background: var(--blanc);
+}
+
+input::placeholder {
+  color: #c4c9d4;
+}
+
+button[type="submit"] {
+  height: 42px;
+  background: var(--bleu);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+button[type="submit"]:hover {
+  background: var(--bleu-fonce);
+}
+
+/* =============================================
+   PAGE SUCCÈS
+============================================= */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: var(--fond);
+  border-radius: 8px;
+  border: 1px solid var(--bordure);
+  margin-bottom: 12px;
+}
+
+.info-label {
+  font-size: 12px;
+  color: var(--gris);
+  width: 100px;
+}
+
+.info-valeur {
+  font-size: 13px;
+  color: var(--texte);
+}
+
+.btn-retour {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: var(--fond);
+  border: 1.5px solid var(--bordure);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--texte);
+  text-decoration: none;
+}
+
+.btn-retour:hover {
+  background: var(--bordure);
+}

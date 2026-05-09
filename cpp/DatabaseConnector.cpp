@@ -85,3 +85,44 @@ int DatabaseConnector::insertCode(const string & code){
     // Return the Id_Groupe so main.cpp can print it for PHP
     return id_groupe;
 }
+
+bool DatabaseConnector::insererEncadrant(string nom, string prenom, string cle, int id_admin) {
+    MYSQL* conn;
+
+    conn = mysql_init(nullptr);
+
+    if (conn == nullptr) {
+        return false;
+    }
+
+    conn = mysql_real_connect(
+        conn,
+        "localhost",
+        "root",
+        "yassine123!@",
+        "gestion_de_project",
+        3306,
+        nullptr,
+        0
+    );
+
+    if (conn == nullptr) {
+        return false;
+    }
+
+    // Construire la requête INSERT
+    string query = "INSERT INTO encadrant (nom_Encad, prenom_Encad, cle_accee, Id_admin) VALUES ('"
+                   + nom + "', '"
+                   + prenom + "', '"
+                   + cle + "', "
+                   + to_string(id_admin) + ")";
+
+    if (mysql_query(conn, query.c_str())) {
+        mysql_close(conn);
+        return false;
+    }
+
+    mysql_close(conn);
+
+    return true;
+}
