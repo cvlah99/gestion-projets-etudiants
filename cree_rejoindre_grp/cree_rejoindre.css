@@ -1,75 +1,108 @@
 @font-face {
-    font-family: 'poppins';
-    src: url(fonts/Montserrat-VariableFont_wght);
+  font-family: 'raleway';
+  src: url('../fonts/raleway.regular.ttf');
 }
-*{
-    font-family: 'poppins';
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} body {
-  width: 100%;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'raleway';
+}
+
+:root {
+  --bleu:       #2563eb;
+  --bleu-fonce: #1d4ed8;
+  --texte:      #111827;
+  --gris:       #6b7280;
+  --bordure:    #e5e7eb;
+  --fond:       #f9fafb;
+  --blanc:      #ffffff;
+}
+
+body {
+  background-color: #f1f5f9;
   min-height: 100vh;
-  background-color: #b8d4e8;
   display: flex;
   align-items: center;
   justify-content: center;
 }
- 
-  .container {
-  background: #ffffff;
-  border-radius: 28px;
-  width: 390px;
-  height: 260px;
-  box-shadow: 6px 10px 0px 0px rgba(140, 170, 200, 0.6);
+
+/* =============================================
+   CARTE CENTRALE
+============================================= */
+.container {
+  background: var(--blanc);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  padding: 48px 44px;
+  width: 420px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  gap: 16px;
 }
- 
-  .container button{
-  width: 215px;
-  height: 46px;
-  background-color: #3d7ab5;
-  color: #ffffff;
-  font-size: 15px;
+
+/* Logo PFS en haut */
+.container::before {
+  content: 'PFS';
+  font-size: 18px;
   font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--bleu);
+  display: block;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--texte);
+}
+
+p {
+  font-size: 13px;
+  color: var(--gris);
+  margin-bottom: 4px;
+}
+
+/* =============================================
+   BOUTONS CRÉER / REJOINDRE
+============================================= */
+.container form {
+  margin: 0;
+}
+
+.container button[type="submit"] {
+  width: 100%;
+  height: 44px;
+  background: var(--bleu);
+  color: #ffffff;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
-  letter-spacing: 0.1px;
-}
-.container button~button{
-  background-color: #5297C2;
-}
- 
-  .container button:hover {
-  background-color: #2f6a9e;
 }
 
-.container a {
-    width: 215px;
-    height: 46px;
-    background-color: #3d7ab5;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 700;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    letter-spacing: 0.1px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container form:nth-of-type(2) button[type="submit"] {
+  background: var(--fond);
+  color: var(--bleu);
+  border: 1.5px solid var(--bordure);
 }
 
-.container a:nth-child(2) {
-    background-color: #5297C2;
+.container button[type="submit"]:hover {
+  background: var(--bleu-fonce);
+  color: #ffffff;
 }
 
-.container a:hover {
-    background-color: #2f6a9e;
+/* =============================================
+   RESPONSIVE MOBILE
+============================================= */
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 40px 24px;
+  }
 }

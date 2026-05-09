@@ -62,6 +62,6 @@ $_SESSION['id_groupe']   = $id_groupe;
 
 // 10. Redirect
 
-header("Location: /PFS/dashboard_etudiant/dashboard.php");
+header("Location: /PFS/cree_rejoindre_grp/afficher_groupe.php");
 exit;
 ?>

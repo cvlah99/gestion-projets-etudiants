@@ -389,3 +389,22 @@ nav {
   font-size: 13px;
   width: fit-content;  
 }
+.badge-accepte {
+  background: #16a34a;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.badge-refuse {
+  background: #dc2626;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  width: fit-content;
+}
