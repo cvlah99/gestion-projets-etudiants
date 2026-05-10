@@ -1,16 +1,6 @@
 <?php
-
-session_start();
-
-if (empty($_SESSION['id_admin'])) {
-    header("Location: login_admin.html");
-    exit();
-}
-
+require "../auth.verif.admin.php";
 require "../Authentification/conexion_db.php";
-
-
-
 // Nombre total d'étudiants
 $sql = "SELECT COUNT(*) AS total FROM etudiant";
 $stmt = $conn->prepare($sql);

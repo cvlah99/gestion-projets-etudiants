@@ -1,4 +1,5 @@
 <?php
+require "../auth.verif.encadrant.php";
 /* =============================================
    CONNEXION BASE DE DONNÉES
 ============================================= */

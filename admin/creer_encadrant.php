@@ -1,14 +1,8 @@
 <?php
+require "../auth.verif.admin.php";
 /* =============================================
    VÉRIFICATION SESSION ADMIN
 ============================================= */
-session_start();
-
-if (empty($_SESSION['id_admin'])) {
-    header("Location: login_admin.html");
-    exit();
-}
-
 /* =============================================
    TRAITEMENT DU FORMULAIRE
 ============================================= */

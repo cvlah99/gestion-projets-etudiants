@@ -13,6 +13,10 @@ if (!isset($_POST['code_groupe'])) {
     header("Location: rejoindre_groupe.html");
     exit;
 }
+if (empty(trim($_POST['code_groupe']))) {
+    header("Location: rejoindre_groupe.html");
+    exit;
+}
 
 $id_etudiant = $_SESSION['id_etudiant'];
 $code = strtoupper(trim($_POST['code_groupe'])); // stroupper converti tous les lettre en majuscule 
