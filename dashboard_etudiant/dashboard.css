@@ -1,0 +1,410 @@
+/* =============================================
+   FONT — Poppins en local
+   Fichier à placer dans : PFS/fonts/
+============================================= */
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway.regular.ttf') ;
+}
+
+/* =============================================
+   VARIABLES
+============================================= */
+:root {
+  --bleu:       #2563eb;
+  --bleu-fonce: #1d4ed8;
+  --bleu-clair: #3b82f6;
+  --texte:      #111827;
+  --gris:       #6b7280;
+  --bordure:    #e5e7eb;
+  --fond:       #f1f5f9;
+  --blanc:      #ffffff;
+  --sidebar:    220px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'raleway';
+}
+
+body {
+  background-color: var(--fond);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =============================================
+   SIDEBAR
+============================================= */
+.sidebar {
+  width: var(--sidebar);
+  background: linear-gradient(180deg, #1e3a8a, #2563eb, #3b82f6);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 4px;
+  margin-bottom: 28px;
+  padding-left: 4px;
+}
+
+/* Profil */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 24px;
+}
+
+.profile-icon {
+  font-size: 20px;
+}
+
+.profile-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.profile-role {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Déconnexion */
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 38, 38, 0.35);
+  color: #ffffff;
+}
+
+/* =============================================
+   MAIN
+============================================= */
+.main {
+  flex: 1;
+  padding: 30px 32px;
+  overflow-y: auto;
+}
+
+/* =============================================
+   BARRE DU HAUT
+============================================= */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.group-code {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gris);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.code-badge {
+  background: var(--bleu);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  letter-spacing: 2px;
+}
+
+.top-bar h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--texte);
+}
+
+.btn-formulaire {
+  background: var(--bleu);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-formulaire:hover {
+  background: var(--bleu-fonce);
+}
+
+/* =============================================
+   CONTENU — deux colonnes
+============================================= */
+.content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* =============================================
+   CARTE GÉNÉRIQUE
+============================================= */
+.card {
+  background: var(--blanc);
+  border: 1.5px solid var(--bordure);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+/* =============================================
+   CARTE MEMBRES
+============================================= */
+.membres-card {
+  flex: 1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.card-header h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--texte);
+}
+
+.count-badge {
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  color: var(--gris);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.membre-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.membre-item:hover {
+  border-color: var(--bleu-clair);
+}
+
+.membre-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.membre-nom {
+  font-size: 13px;
+  color: var(--texte);
+}
+
+/* =============================================
+   COLONNE DROITE
+============================================= */
+.right-column {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =============================================
+   CALENDRIER
+============================================= */
+.cal-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--texte);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+
+.cal-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--gris);
+  padding: 4px 0;
+}
+
+.cal-case {
+  width: 26px;
+  height: 26px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--texte);
+  border-radius: 50%;
+}
+
+.cal-case:hover {
+  background: var(--fond);
+}
+
+.cal-today {
+  background: var(--bleu);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* =============================================
+   NOTIFICATIONS
+============================================= */
+.notif-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--texte);
+  margin-bottom: 12px;
+}
+
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--fond);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.notif-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bleu);
+  margin-top: 3px;
+}
+
+.notif-text {
+  font-size: 11px;
+  color: var(--texte);
+  line-height: 1.5;
+}
+
+.notif-time {
+  font-size: 10px;
+  color: var(--gris);
+  margin-top: 3px;
+}
+
+.voir-tout {
+  display: block;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--bleu);
+  text-decoration: none;
+}
+
+.voir-tout:hover {
+  text-decoration: underline;
+}
+
+.badge-attente {
+  background: #d97706;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  width: fit-content;  
+}
+.badge-accepte {
+  background: #16a34a;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.badge-refuse {
+  background: #dc2626;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  width: fit-content;
+}

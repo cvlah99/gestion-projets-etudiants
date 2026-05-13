@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway.regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'raleway';
+}
+
+:root {
+  --bleu:       #2563eb;
+  --bleu-fonce: #1d4ed8;
+  --texte:      #111827;
+  --gris:       #6b7280;
+  --bordure:    #e5e7eb;
+  --fond:       #f9fafb;
+  --blanc:      #ffffff;
+}
+
+body {
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================================
+   CARTE CENTRALE
+============================================= */
+.container {
+  background: var(--blanc);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  padding: 48px 44px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Logo PFS en haut */
+.container::before {
+  content: 'PFS';
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--bleu);
+  display: block;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--texte);
+}
+
+p {
+  font-size: 13px;
+  color: var(--gris);
+  margin-top: -8px;
+}
+
+/* =============================================
+   BADGE CODE GROUPE
+============================================= */
+.container span {
+  display: block;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--bleu);
+  letter-spacing: 10px;
+  background-color: var(--fond);
+  border: 2px dashed var(--bordure);
+  border-radius: 10px;
+  padding: 20px 0;
+}
+
+/* =============================================
+   BOUTON DASHBOARD
+============================================= */
+.container a {
+  height: 44px;
+  background: var(--bleu);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container a:hover {
+  background: var(--bleu-fonce);
+}
+
+/* =============================================
+   RESPONSIVE MOBILE
+============================================= */
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 40px 24px;
+  }
+
+  .container span {
+    font-size: 26px;
+    letter-spacing: 6px;
+  }
+}

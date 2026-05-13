@@ -1,0 +1,33 @@
+<?php
+require "../auth.verif.php";
+
+if (!empty($_SESSION['id_groupe'])) {
+    header("Location: /PFS/dashboard_etudiant/dashboard.php");
+    exit;
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cree_rejoindre.css">
+    <title>Page3</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="creer_groupe.php" method="post">
+            <button type="submit">Cree un groupe</button>
+        </form>
+        <form action="rejoindre_groupe.php" method="post">
+            <button type="submit">Rejoindre un groupe</button>
+        </form>
+       
+    </div>
+</body>
+</html>

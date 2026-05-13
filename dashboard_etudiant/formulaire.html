@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulaire de Projet — PFS</title>
+  <link rel="stylesheet" href="formulaire.css" />
+</head>
+<body>
+
+<!-- ===================== SIDEBAR ===================== -->
+<div class="sidebar">
+
+  <div class="logo">PFS</div>
+
+  <div class="profile-box">
+    <div class="profile-icon">👤</div>
+    <div class="profile-text">
+      <div class="profile-name">
+        <?php echo htmlspecialchars($_SESSION['nom'] . " " . $_SESSION['prenom']); ?>
+      </div>
+      <div class="profile-role">Étudiant</div>
+    </div>
+  </div>
+
+  <nav>
+    <a class="nav-link" href="/PFS/dashboard_etudiant/dashboard.php">Dashboard</a>
+    <a class="nav-link active" href="#">Formulaire projet</a>
+    <a class="nav-link" href="/PFS/pfs/tache.php">Tâche à soumettre</a>
+    <a class="nav-link" href="/PFS/pfs/soutenance.php">Soutenance</a>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <form action="/PFS/logout.php" method="post">
+      <button class="logout-btn" type="submit">Déconnexion</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- ===================== CONTENU PRINCIPAL ===================== -->
+<div class="main">
+
+  <!-- Breadcrumb + titre -->
+  <div class="top-bar">
+    <div class="breadcrumb">
+      <a href="/PFS/dashboard_etudiant/dashboard.php">Dashboard</a>
+      <span>›</span>
+      <span>Formulaire de projet</span>
+    </div>
+    <h1>Formulaire de projet</h1>
+  </div>
+
+  <!-- Carte formulaire -->
+  <div class="form-card">
+
+    <h2>Informations du projet</h2>
+    <p class="sous-titre">Remplissez les champs ci-dessous et joignez votre rapport PDF</p>
+
+    <form action="formulaire.php" method="POST" enctype="multipart/form-data">
+
+      <div class="champ">
+        <label for="titre">Sujet du projet</label>
+        <input type="text" id="titre" name="titre"
+               placeholder="Ex : Application de gestion de stocks"
+               required>
+      </div>
+
+      <div class="champ">
+        <label for="description">Description du sujet</label>
+        <textarea id="description" name="description"
+                  placeholder="Décrivez brièvement votre projet..."
+                  required></textarea>
+      </div>
+
+      <div class="champ">
+        <label>Rapport PDF</label>
+        <div class="upload-zone" onclick="document.getElementById('rapport').click()">
+          <div class="upload-textes">
+            <span class="upload-titre">Cliquez pour choisir un fichier PDF</span>
+            <span class="upload-nom" id="file-name">Aucun fichier sélectionné</span>
+          </div>
+        </div>
+        <input type="file" id="rapport" name="rapport" accept=".pdf" required>
+      </div>
+
+      <div class="boutons">
+        <a href="/PFS/dashboard_etudiant/dashboard.php" class="btn-annuler">Annuler</a>
+        <button type="submit" class="btn-soumettre">Soumettre le projet</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+  var input    = document.getElementById('rapport');
+  var fileName = document.getElementById('file-name');
+  var zone     = document.querySelector('.upload-zone');
+
+  input.addEventListener('change', function() {
+    if (this.files[0]) {
+      fileName.textContent = this.files[0].name;
+      zone.classList.add('has-file');
+    } else {
+      fileName.textContent = 'Aucun fichier sélectionné';
+      zone.classList.remove('has-file');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 <?php
 session_start(); //pour memoriser l utulisateur connecte
-require "Authentification/conexion_db.php";
+require "../Authentification/conexion_db.php";
 
 if (isset($_POST["email_etd"], $_POST["password_etd"])) {
 
@@ -12,11 +12,14 @@ if (isset($_POST["email_etd"], $_POST["password_etd"])) {
         filter_var($email_etd, FILTER_VALIDATE_EMAIL)) {
 
         $sql = "
-            SELECT Id_Etudiant, nom_Etudiant, prenom_Etudiant, email, mot_de_passe
-            FROM etudiant
-            WHERE email = :email
-              AND email != 'system@local'
-            LIMIT 1
+        
+        SELECT Id_Etudiant, nom_Etudiant, prenom_Etudiant, email, mot_de_passe, Id_Groupe
+        FROM etudiant
+        WHERE email = :email
+        AND email != 'system@local'
+        LIMIT 1
+
+            
         ";
 
         $stmt = $conn->prepare($sql);
@@ -30,12 +33,29 @@ if (isset($_POST["email_etd"], $_POST["password_etd"])) {
 
             
             if ($password_etd === $user['mot_de_passe']) {
+                unset($_SESSION['id_groupe']); //important pour un utulisateur qui est connecte et veut acceder au s  dashboard sans groupe
                 $_SESSION['id_etudiant']=$user['Id_Etudiant'];
                 $_SESSION['nom'] = $user['nom_Etudiant'];
                 $_SESSION['prenom'] = $user['prenom_Etudiant'];
                 $_SESSION['email'] = $user['email'];
-                header("location: dashboard.php");
+                
+                // pour que l erudiant qui a deja un groupe passe directement au dashboard
+                if (!empty($user['Id_Groupe'])) {
+                $_SESSION['id_groupe'] = $user['Id_Groupe'];
+}
+
+                
+                // Redirection intelligente après connexion
+                if (!empty($_SESSION['id_groupe'])) {
+                // ✅ L'utilisateur a déjà un groupe → dashboard directement
+                header("Location: /PFS/dashboard_etudiant/dashboard.php");
                 exit;
+                } else {
+                    // ✅ L'utilisateur n'a pas de groupe → créer / rejoindre
+                    header("Location: /PFS/cree_rejoindre_grp/cree_rejoindre.php");
+                    exit;
+}
+
                 
 
             } else {

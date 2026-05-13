@@ -1,0 +1,146 @@
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway.regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'raleway';
+}
+
+:root {
+  --bleu:       #2563eb;
+  --bleu-fonce: #1d4ed8;
+  --texte:      #111827;
+  --gris:       #6b7280;
+  --bordure:    #e5e7eb;
+  --fond:       #f9fafb;
+  --blanc:      #ffffff;
+}
+
+body {
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================================
+   CARTE CENTRALE
+============================================= */
+.container {
+  background: var(--blanc);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  padding: 48px 44px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Logo PFS en haut */
+.container::before {
+  content: 'PFS';
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--bleu);
+  display: block;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--texte);
+}
+
+p {
+  font-size: 13px;
+  color: var(--gris);
+  margin-bottom: 4px;
+}
+
+/* =============================================
+   FORMULAIRE
+============================================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+input {
+  height: 42px;
+  padding: 0 14px;
+  border: 1.5px solid var(--bordure);
+  border-radius: 8px;
+  background: var(--fond);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texte);
+  outline: none;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+input:focus {
+  border-color: var(--bleu);
+  background: var(--blanc);
+}
+
+input::placeholder {
+  color: #c4c9d4;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+}
+
+button[type="submit"] {
+  height: 44px;
+  background: var(--bleu);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: var(--bleu-fonce);
+}
+
+/* =============================================
+   LIEN RETOUR
+============================================= */
+.container a {
+  font-size: 12px;
+  color: var(--bleu);
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   RESPONSIVE MOBILE
+============================================= */
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 40px 24px;
+  }
+}
