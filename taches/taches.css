@@ -1,0 +1,142 @@
+/* ============================================================
+   taches.css
+   Styles for the task pages (encadrant and student sides).
+   Follows the same visual style as the existing CSS files.
+   ============================================================ */
+
+/* --- Alert success message --- */
+.alert_succes {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- Add task button --- */
+.btn_ajouter_tache {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #4f46e5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+.btn_ajouter_tache:hover {
+    background: #3730a3;
+}
+
+/* --- Task card (student view) --- */
+.tache_card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.tache_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tache_header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #1e293b;
+}
+
+.tache_description {
+    color: #475569;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.tache_meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #64748b;
+    margin: 10px 0;
+}
+
+.tache_soumis_info {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+/* --- Status badges (reused from main CSS) --- */
+.badge_statut {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.badge_accepte  { background: #d4edda; color: #155724; }
+.badge_refuse   { background: #f8d7da; color: #721c24; }
+.badge_attente  { background: #fff3cd; color: #856404; }
+.badge_soumis   { background: #cce5ff; color: #004085; }
+
+/* --- Action buttons --- */
+.btn_action {
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn_valider {
+    background: #d4edda;
+    color: #155724;
+}
+.btn_valider:hover { background: #c3e6cb; }
+
+.btn_refuser {
+    background: #f8d7da;
+    color: #721c24;
+}
+.btn_refuser:hover { background: #f5c6cb; }
+
+/* --- Upload form --- */
+.upload_form {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+/* --- Stat cards for admin (tache stats) --- */
+.stat_card_tache {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
+}
+.stat_card_tache .stat_nombre {
+    font-size: 36px;
+    font-weight: 800;
+    color: #4f46e5;
+}
+.stat_card_tache .stat_label {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 4px;
+}
