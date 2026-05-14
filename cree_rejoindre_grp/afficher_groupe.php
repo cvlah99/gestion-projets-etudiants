@@ -22,7 +22,7 @@ $code = $_SESSION['code_groupe'];
         <h2>Groupe créé !</h2>
         <p>Partagez ce code avec vos coéquipiers.</p>
         <span><?php echo $code; ?></span>
-        <a href="dashboard.php">Aller au tableau de bord</a>
+        <a href="/PFS/dashboard_etudiant/dashboard.php">Aller au tableau de bord</a>
     </div>
 </body>
 </html>

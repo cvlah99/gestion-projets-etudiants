@@ -90,8 +90,13 @@ $formulaire = $stmt_form->fetch();
     </div>
 
     <?php if ($formulaire): ?>
-    <!-- Formulaire déjà soumis → badge orange -->
-    <div class="badge-attente">Project : En attente de validation</div>
+      <?php if ($formulaire['statut'] === 'accepte'): ?>
+        <div class="badge-accepte">✓ Projet accepté</div>
+      <?php elseif ($formulaire['statut'] === 'refuse'): ?>
+        <div class="badge-refuse">✗ Projet refusé</div>
+      <?php else: ?>
+        <div class="badge-attente">⏳ En attente de validation</div>
+      <?php endif; ?>
     <?php else: ?>
       <!-- Pas encore soumis → bouton bleu -->
       <a class="btn-formulaire" href="/PFS/dashboard_etudiant/formulaire.html">

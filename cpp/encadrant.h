@@ -22,10 +22,10 @@ public:
  
     Encadrant& operator=(const Encadrant& e);
  
-    string getNom()      const;
-    string getPrenom()   const;
-    string getCleAccee() const;
-    int    getIdAdmin()  const;
+    string getNom()const;
+    string getPrenom()const;
+    string getCleAccee()const;
+    int    getIdAdmin()const;
  
     void setNom(string nom);
     void setPrenom(string prenom);

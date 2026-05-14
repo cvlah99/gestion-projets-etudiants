@@ -1,3 +1,4 @@
+<?php require "../auth.verif.admin.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,6 +9,7 @@
 </head>
 <body>
 
+<!-- ===================== SIDEBAR ===================== -->
 <div class="sidebar">
 
   <div class="logo">PFS</div>
@@ -35,6 +37,7 @@
 
 </div>
 
+<!-- ===================== CONTENU PRINCIPAL ===================== -->
 <div class="main">
 
   <div class="top-bar">
@@ -51,7 +54,7 @@
       <div class="champ">
         <label for="nom">Nom</label>
         <input type="text" id="nom" name="nom"
-               placeholder="Ex : Benali" required>
+               placeholder="Ex : Benali" required minlength="3">
       </div>
 
       <div class="champ">

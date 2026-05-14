@@ -9,7 +9,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
  
     
-    if (argc != 4) {
+    if (argc != 4) { // verifie  les argument entrer en devait avoit  3 agr nom prenom id et le code  
         cout << "ERREUR: arguments manquants" << endl;
         return 1;
     }

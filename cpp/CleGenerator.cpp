@@ -42,8 +42,12 @@ string CleGenerator::genererCle() {
     return cle;
 }
 
-int    CleGenerator::getLongueur()   const { return longueur;   }
-string CleGenerator::getCaracteres() const { return caracteres; }
+int CleGenerator::getLongueur()const{
+     return longueur;
+    }
+string CleGenerator::getCaracteres()const{
+    return caracteres; 
+}
  
 
 void CleGenerator::setLongueur(int longueur) {

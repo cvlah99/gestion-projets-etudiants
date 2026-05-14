@@ -1,14 +1,8 @@
 <?php
+require "../auth.verif.admin.php";
 /* =============================================
    VÉRIFICATION SESSION ADMIN
 ============================================= */
-session_start();
-
-if (empty($_SESSION['id_admin'])) {
-    header("Location: login_admin.html");
-    exit();
-}
-
 /* =============================================
    TRAITEMENT DU FORMULAIRE
 ============================================= */
@@ -25,7 +19,7 @@ if (isset($_POST["nom"]) && isset($_POST["prenom"])) {
     }
 
     /* ---- Appeler le binaire C++ ---- */
-    $exe = __DIR__ . "/../CPP/encadrant.exe";
+    $exe = __DIR__ . "/../cpp/encadrant.exe";
 
     $commande = '"' . $exe . '" ' . escapeshellarg($nom) . " " . escapeshellarg($prenom) . " " . $id_admin;
     $cle = trim(shell_exec($commande));
@@ -92,7 +86,7 @@ if (isset($_POST["nom"]) && isset($_POST["prenom"])) {
 
 <?php
 } else {
-    header("Location: creer_encadrant.html");
+    header("Location: creer_encadrant_form.php");
     exit();
 }
 ?>
