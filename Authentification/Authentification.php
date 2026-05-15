@@ -1,5 +1,6 @@
 <?php
 require "conexion_db.php"; //conexion a la base de donne
+require "../logger.php"; //journalisation
 if (
     isset($_POST["nom"]) && // verifier que  l utulisateur vient du formulaire et pas par l url directement
     isset($_POST["prenom"]) &&
@@ -24,22 +25,22 @@ if (
         !empty($mot_de_passe)
     ) {
 
-        if (!preg_match("/[A-Za-zÀ-ÿ\s]{3,}/", $nom)) { //double verification tous les verifications au niveau front doit etre traite dans le back
+        if (!preg_match("/[A-Za-zÀ-ÿ\s]{3,}/", $nom)) { //double verification tous les verifications au niveau front doit etre traite dans le back 
             echo "Nom invalide.";
             exit;
         }
 
-        if (!preg_match("/[A-Za-zÀ-ÿ\s]{3,}/", $prenom)) {
+        if (!preg_match("/[A-Za-zÀ-ÿ\s]{3,}/", $prenom)) { //le pattern tous les lettres maj et min et tous les lettres accente 3 minimum trois caracteres
             echo "Prénom invalide.";
             exit;
         }
 
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //verification email
             echo "Email invalide.";
             exit;
         }
 
-        if (!preg_match("/[A-Za-z0-9]{1,10}/", $groupe_classe)) {
+        if (!preg_match("/[A-Za-z0-9]{1,10}/", $groupe_classe)) { //toutes les lettres maj et min et les chiffres 
             echo "Groupe de classe invalide.";
             exit;
         }
@@ -56,7 +57,7 @@ if (
             }
         }
 
-        //preparer la requete select :nom .... sont des parametres nomee qu ils vas etres emplaces par des vrais valeur
+        //preparer la requete select :nom .... sont des parametres nomee qu ils vas etres emplaces par des vrais valeurs
         $query = "
          INSERT INTO etudiant
         (nom_Etudiant, prenom_Etudiant, Group_cls, email, mot_de_passe, provenance, Id_Groupe)
@@ -70,8 +71,10 @@ if (
         NULL
     )
     ";
-    $stmt = $conn->prepare($query);
+    $stmt = $conn->prepare($query); //envoie de la requette a mysql sans executer
     $stmt->execute(array(":nom"=>$nom,":prenom"=>$prenom,":groupe_classe"=>$groupe_classe,":email"=>$email,":mot_de_passe"=>$mot_de_passe,":provenance"=>$provenance));
+    logAction("Inscription reussie email=" . $email, null); //journalisation
+    //remplace les parametres nomees et execution
     header("Location: ../connection_etudiant/connection_etudiant.html");
     exit;
     

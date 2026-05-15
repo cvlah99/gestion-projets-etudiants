@@ -1,67 +1,61 @@
 <?php
-session_start();
+require "../auth.verif.php";
 require "../Authentification/conexion_db.php";
+require "../logger.php";
 
-// check if the student is logged in
-if (!isset($_SESSION['id_etudiant'])) {
-    header("Location: ../connection_etudiant/connection_etudiant.html");
-    exit;
-}
-
-// check that the form was submitted
-if (!isset($_POST['code_groupe'])) {
+if (!isset($_POST['code_groupe'])) { //on verie qu il vient du formulaire
     header("Location: rejoindre_groupe.html");
     exit;
 }
-if (empty(trim($_POST['code_groupe']))) {
+if (empty(trim($_POST['code_groupe']))) { 
     header("Location: rejoindre_groupe.html");
     exit;
 }
 
 $id_etudiant = $_SESSION['id_etudiant'];
-$code = strtoupper(trim($_POST['code_groupe'])); // stroupper converti tous les lettre en majuscule 
+$code = strtoupper(trim($_POST['code_groupe'])); // on transforme le code du groupe en majuscul 
 
 // check if the student already has a group
-$sql = "SELECT Id_Groupe FROM etudiant WHERE Id_Etudiant = :id";
+$sql = "SELECT Id_Groupe FROM etudiant WHERE Id_Etudiant = :id"; //on cherche id groupe de l etudiant
 $stmt = $conn->prepare($sql);
 $stmt->execute([":id" => $id_etudiant]);
 $etudiant = $stmt->fetch();
 
-if ($etudiant['Id_Groupe'] != null) {
+if ($etudiant['Id_Groupe'] != null) { //si id groupe n est pas null donc l etudiant a deja un groupe
     echo "Vous avez déjà un groupe.";
     exit;
 }
 
-// search for the group with this code
-$sql2 = "SELECT Id_Groupe FROM groupe WHERE code_groupe = :code";
+
+$sql2 = "SELECT Id_Groupe FROM groupe WHERE code_groupe = :code"; //on cherche l id groupe qui ont ce code
 $stmt2 = $conn->prepare($sql2);
 $stmt2->execute([":code" => $code]);
 $groupe = $stmt2->fetch();
 
 // if no group found
 if (!$groupe) {
-    echo "Code invalide. Aucun groupe trouvé.";
+    echo "Code invalide. Aucun groupe trouvé."; 
     exit;
 }
 
 $id_groupe = $groupe['Id_Groupe'];
 
-// Mettre à jour la session avec le groupe rejoint
+
 $_SESSION['id_groupe'] = $id_groupe;
 
 
-// link the student to this group
+// on modie l id du groupe de l etudiant qui vient de rejoidre le groupe
 $sql3 = "UPDATE etudiant SET Id_Groupe = :id_groupe WHERE Id_Etudiant = :id_etudiant";
 $stmt3 = $conn->prepare($sql3);
 $stmt3->execute([":id_groupe" => $id_groupe, ":id_etudiant" => $id_etudiant]);
 
-// increment the member count
+// on augmante le nembre de membre du groupe
 $sql4 = "UPDATE groupe SET membre_grp = membre_grp + 1 WHERE Id_Groupe = :id_groupe";
 $stmt4 = $conn->prepare($sql4);
 $stmt4->execute([":id_groupe" => $id_groupe]);
 
-// send the student to the dashboard
 
+logAction("Groupe rejoint ID=" . $id_groupe, $id_etudiant);
 header("Location: /PFS/dashboard_etudiant/dashboard.php");
 exit;
 

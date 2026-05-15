@@ -1,21 +1,15 @@
 <?php
-/* =============================================
-   VÉRIFICATION SESSION + RÉCUPÉRATION DONNÉES
-============================================= */
-require "../auth.verif.php";
 
-// Si l'étudiant n'a pas de groupe → redirection
+require "../auth.verif.php";
 if (empty($_SESSION['id_groupe'])) {
     header("Location: /PFS/cree_rejoindre_grp/cree_rejoindre.html");
     exit;
 }
 
-// Connexion base de données
 require "../Authentification/conexion_db.php";
 
 $id_groupe = $_SESSION['id_groupe'];
 
-// Récupérer les membres du groupe
 $sql = "SELECT nom_Etudiant, prenom_Etudiant
         FROM etudiant
         WHERE Id_Groupe = :id_groupe";
@@ -24,7 +18,6 @@ $stmt = $conn->prepare($sql);
 $stmt->execute([":id_groupe" => $id_groupe]);
 $membres = $stmt->fetchAll();
 
-// Récupérer le code du groupe
 $sql_code = "SELECT code_groupe FROM groupe WHERE Id_Groupe = :id_groupe";
 $stmt_code = $conn->prepare($sql_code);
 $stmt_code->execute([":id_groupe" => $id_groupe]);
@@ -47,7 +40,6 @@ $formulaire = $stmt_form->fetch();
 </head>
 <body>
 
-<!-- ===================== SIDEBAR ===================== -->
 <div class="sidebar">
 
   <div class="logo">PFS</div>
@@ -76,10 +68,9 @@ $formulaire = $stmt_form->fetch();
 
 </div>
 
-<!-- ===================== CONTENU PRINCIPAL ===================== -->
 <div class="main">
 
-  <!-- En-tête -->
+  
   <div class="top-bar">
     <div>
       <div class="group-code">
@@ -92,23 +83,26 @@ $formulaire = $stmt_form->fetch();
     <?php if ($formulaire): ?>
       <?php if ($formulaire['statut'] === 'accepte'): ?>
         <div class="badge-accepte">✓ Projet accepté</div>
-      <?php elseif ($formulaire['statut'] === 'refuse'): ?>
-        <div class="badge-refuse">✗ Projet refusé</div>
+     <?php elseif ($formulaire['statut'] === 'refuse'): ?>
+    <div class="badge-refuse">✗ Projet refusé</div>
+    <a class="btn-formulaire" href="/PFS/dashboard_etudiant/formulaire.html">
+        + Soumettre un nouveau projet
+    </a>
       <?php else: ?>
-        <div class="badge-attente">⏳ En attente de validation</div>
+        <div class="badge-attente"> En attente de validation</div>
       <?php endif; ?>
     <?php else: ?>
-      <!-- Pas encore soumis → bouton bleu -->
+      
       <a class="btn-formulaire" href="/PFS/dashboard_etudiant/formulaire.html">
         + Remplir le formulaire de projet
       </a>
     <?php endif; ?>
   </div>
 
-  <!-- Contenu -->
+  
   <div class="content">
 
-    <!-- Membres du groupe -->
+    
     <div class="card membres-card">
       <div class="card-header">
         <h2>Membres du groupe</h2>
@@ -127,16 +121,16 @@ $formulaire = $stmt_form->fetch();
       <?php endforeach; ?>
     </div>
 
-    <!-- Colonne droite -->
+    
     <div class="right-column">
 
-      <!-- Calendrier -->
+      
       <div class="card">
         <div class="cal-title" id="cal-month"></div>
         <div class="cal-grid" id="cal-grid"></div>
       </div>
 
-      <!-- Notifications -->
+    
       <div class="card">
         <h3 class="notif-title">Notifications</h3>
         <div class="notif-item">
@@ -154,7 +148,7 @@ $formulaire = $stmt_form->fetch();
 
 </div>
 
-<!-- ===================== CALENDRIER (JavaScript) ===================== -->
+
 <script src="calendrier.js"></script>
 
 </body>
