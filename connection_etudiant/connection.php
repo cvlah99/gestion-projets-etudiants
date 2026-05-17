@@ -22,7 +22,7 @@ if (isset($_POST["email_etd"], $_POST["password_etd"])) {
         FROM etudiant
 
         WHERE email = :email
-        AND email != 'system@loc'al'
+        AND email != 'system@local'
         LIMIT 1
         
 

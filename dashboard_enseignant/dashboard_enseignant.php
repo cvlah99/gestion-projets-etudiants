@@ -51,7 +51,7 @@ $formulaires = $stmt->fetchAll();
                     <i class="fa-solid fa-user-graduate"></i>
                     <span>Etudiants</span>
                 </a>
-                <a href="ajouter_tache_enseignant.html" class="nav_link">
+                <a href="taches_enseignant.php" class="nav_link">
                     <i class="fa-solid fa-list-check"></i>
                     <span>Taches</span>
                 </a>

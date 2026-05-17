@@ -56,7 +56,7 @@ $formulaire = $stmt_form->fetch();
 
   <nav>
     <a class="nav-link active" href="/PFS/dashboard_etudiant/dashboard.php">Dashboard</a>
-    <a class="nav-link" href="/PFS/pfs/tache.php">Tâche à soumettre</a>
+    <a class="nav-link" href="/PFS/dashboard_etudiant/tache.php">Tâche à soumettre</a>
     <a class="nav-link" href="/PFS/pfs/soutenance.php">Soutenance</a>
   </nav>
 
